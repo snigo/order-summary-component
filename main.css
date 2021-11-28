@@ -45,14 +45,13 @@ body {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   margin: 0;
   font-weight: 900;
   color: var(--text-dark);
 }
 
-h3 {
+h2 {
   font-size: 1.1rem;
 }
 
