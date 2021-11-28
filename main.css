@@ -1,0 +1,339 @@
+:root {
+  --base-font-size: 16px;
+  --font-family-regular: 'Red Hat Display', sans-serif;
+  --pale-blue: #e0e8ff;
+  --pale-blue-light: #f5f7ff;
+  --primary: hsl(245, 75%, 52%);
+  --primary-action: hsl(245, 75%, 62%);
+  --primary-shadow25: hsl(245, 75%, 52%, 25%);
+  --primary-shadow10: hsl(245, 75%, 52%, 10%);
+  --text-light: hsl(224, 23%, 55%);
+  --text-dark: hsl(223, 47%, 23%);
+  --red: #ff3282;
+  --transition: .2s ease-in-out;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  position: relative;
+  color: var(--text-light);
+  font-family: var(--font-family-regular);
+  font-size: var(--base-font-size);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(ellipse at center, rgb(255 254 234) 0%, rgb(255 254 234) 35%, rgb(212 225 255) 100%);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 900;
+  color: var(--text-dark);
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+button {
+  font-size: 0.9rem;
+  font-family: var(--font-family-regular);
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+a:any-link,
+.button-text {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color var(--transition);
+}
+
+a:any-link:focus,
+a:any-link:hover,
+.button-text:focus,
+.button-text:hover {
+  cursor: pointer;
+  color: var(--primary-action);
+}
+
+.button-text:focus {
+  outline: 2px solid var(--primary-shadow10);
+}
+
+.button-primary {
+  padding: 14px 18px;
+  color: white;
+  font-weight: 900;
+  background-color: var(--primary);
+  border-radius: 9px;
+  box-shadow: 0 16px 16px var(--primary-shadow10);
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.button-primary:focus,
+.button-primary:hover {
+  cursor: pointer;
+  background-color: var(--primary-action);
+  box-shadow: 0 24px 16px var(--primary-shadow10);
+}
+
+.button-primary:focus {
+  outline: 2px solid white;
+  outline-offset: -4px;
+}
+
+.button-secondary {
+  padding: 14px 18px;
+  color: var(--text-light);
+  font-weight: 900;
+  border-radius: 9px;
+  transition: color var(--transition);
+}
+
+.button-secondary:focus,
+.button-secondary:hover {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.button-secondary:focus {
+  outline: 2px solid var(--primary-shadow10);
+}
+
+.button-fullwidth {
+  display: block;
+  width: 100%;
+}
+
+main {
+  padding: 0.5rem;
+  padding-bottom: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  width: 100%;
+  max-width: 512px;
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: 0 24px 64px -32px var(--primary-shadow25);
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 3rem min(3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.card-title {
+  font-size: 1.65rem;
+  text-align: center;
+}
+
+.card-description {
+  text-align: center;
+  padding-left: min(3vw, 2rem);
+  padding-right: min(3vw, 2rem);
+}
+
+.card-plan {
+  width: 100%;
+  border-radius: 9px;
+  background-color: var(--pale-blue-light);
+}
+
+.list {
+  margin: 0;
+  padding: 1.5rem min(3vw, 1.5rem);
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.list-item-icon {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-item-content {
+  flex: 1;
+}
+
+.card-action {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+footer {
+  position: absolute;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 32px;
+  left: 0;
+  bottom: 0;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.love {
+  position: relative;
+  display: inline-block;
+  color: var(--red);
+}
+
+.love::before {
+  content: '';
+  position: absolute;
+  top: 0.5ch;
+  left: 0;
+  width: 0.5ch;
+  height: 0.5ch;
+  opacity: 0;
+  border-radius: 35%;
+  background-color: var(--red);
+  transform: scale(0);
+  animation: pulse 1.2s infinite;
+}
+
+.love::after {
+  content: '';
+  position: absolute;
+  top: 0.5ch;
+  right: 0;
+  width: 0.5ch;
+  height: 0.5ch;
+  opacity: 0;
+  border-radius: 35%;
+  background-color: var(--red);
+  transform: scale(0);
+  animation: pulse 1.2s infinite 0.4s;
+}
+
+.wave-overlay {
+  position: fixed;
+  bottom: 0;
+  height: 50%;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, var(--pale-blue) 5%, rgb(255 254 234 / 50%));
+  z-index: -1;
+}
+
+.wave {
+  background-image: url(images/wave_overlay.svg);
+  background-repeat: repeat-x;
+  background-size: contain;
+  position: absolute;
+  top: -198px;
+  width: calc(100% + 1600px);
+  height: 198px;
+  animation: wave 13s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 21s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --base-font-size: 15px;
+  }
+}
+@media screen and (max-width: 414px) {
+  :root {
+    --base-font-size: 14px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .5;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4);
+  }
+}
